@@ -17,6 +17,9 @@ Although VHDL is extremely simplified version of what I will need to create and 
 - display the values in decimal and/or hexidecimal as well as in binary values.
 
 ## Important Milestones
+11/7/2022 : building subcircuits (adder, Fig1B, Fig1C) in C++ for later conversion and contemplation in ASM; Adder subcircuit not currently working correctly.
+
+
 
 ## Final Result
 
