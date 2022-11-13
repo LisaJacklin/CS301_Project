@@ -1,0 +1,8 @@
+CS 301
+Multiplier VHDL to assemmbly code notes!
+
+-code to cpp first, since I think using classes to build the subcircuits would
+	be somewhat helpful to understand how i should convert into assembly...
+
+-maybe even choose to link a cpp file to assembly..? that way there is assembly to build or used 
+	the circuit..?
