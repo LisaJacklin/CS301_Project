@@ -6,3 +6,15 @@ Multiplier VHDL to assemmbly code notes!
 
 -maybe even choose to link a cpp file to assembly..? that way there is assembly to build or used 
 	the circuit..?
+
+- in the cpp conversion from vhdl, is there a better way to intput the binary numbers rather than 
+	in the form of integers? (note M and Q taken by void multiplier....)
+	--> idea 1: could do an integer vector of some kind...
+			--this would more than likely be difficult to impliment if allowing a user to input
+				values.... 
+	--> idea 2: simply make it known that hey, pls insert a 4 piece integer...?
+			--then how will this be looked at???
+	--> what I'm going to try:
+		> Array/vector like I did in VHDL (M[0]-M[3], etc...this is shown in VHDL through 
+			std_logic_vector(topval DOWNTO bottomval)
+			-need to refresh how to do this in a function though....
