@@ -18,7 +18,8 @@ Although VHDL is extremely simplified version of what I will need to create and 
 
 ## Important Milestones
 11/7/2022 : building subcircuits (adder, Fig1B, Fig1C) in C++ for later conversion and contemplation in ASM; Adder subcircuit not currently working correctly.
-
+11/12/2022 : all subcircuits created and compiling correctly. Multiplier with vector input added.
+11/13/2022 : multiplier code edited and adjusted. Almost ready for testing
 
 
 ## Final Result
