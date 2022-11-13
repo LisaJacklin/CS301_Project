@@ -18,3 +18,8 @@ Multiplier VHDL to assemmbly code notes!
 		> Array/vector like I did in VHDL (M[0]-M[3], etc...this is shown in VHDL through 
 			std_logic_vector(topval DOWNTO bottomval)
 			-need to refresh how to do this in a function though....
+- how do I use the cout values...can I set the output values to push to a vector outside of the multiplier function?
+	-same issue with the carry values...or the answers to the rows of pieces....maybe I should go down rather than 
+		across...(view multiplier circuit again) not sure if this will help but might try...
+
+--USING CHAR SINCE IT TAKES A SINGLE BYTE! THIS IS IMPORTANTTTTT
