@@ -1,0 +1,514 @@
+
+code.obj:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <Adder(char, char, char)>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   r12
+   6:	55                   	push   rbp
+   7:	53                   	push   rbx
+   8:	48 83 ec 10          	sub    rsp,0x10
+   c:	89 f0                	mov    eax,esi
+   e:	bd 28 00 00 00       	mov    ebp,0x28
+  13:	64 48 8b 4d 00       	mov    rcx,QWORD PTR fs:[rbp+0x0]
+  18:	48 89 4c 24 08       	mov    QWORD PTR [rsp+0x8],rcx
+  1d:	31 c9                	xor    ecx,ecx
+  1f:	89 d3                	mov    ebx,edx
+  21:	31 f3                	xor    ebx,esi
+  23:	31 fb                	xor    ebx,edi
+  25:	89 d6                	mov    esi,edx
+  27:	09 fe                	or     esi,edi
+  29:	21 c6                	and    esi,eax
+  2b:	21 fa                	and    edx,edi
+  2d:	09 f2                	or     edx,esi
+  2f:	88 54 24 07          	mov    BYTE PTR [rsp+0x7],dl
+  33:	4c 8d 64 24 07       	lea    r12,[rsp+0x7]
+  38:	ba 01 00 00 00       	mov    edx,0x1
+  3d:	4c 89 e6             	mov    rsi,r12
+  40:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 47 <Adder(char, char, char)+0x47>
+			43: R_X86_64_PC32	std::cout-0x4
+  47:	e8 00 00 00 00       	call   4c <Adder(char, char, char)+0x4c>
+			48: R_X86_64_PLT32	std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)-0x4
+  4c:	48 89 c7             	mov    rdi,rax
+  4f:	88 5c 24 07          	mov    BYTE PTR [rsp+0x7],bl
+  53:	ba 01 00 00 00       	mov    edx,0x1
+  58:	4c 89 e6             	mov    rsi,r12
+  5b:	e8 00 00 00 00       	call   60 <Adder(char, char, char)+0x60>
+			5c: R_X86_64_PLT32	std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)-0x4
+  60:	48 89 c7             	mov    rdi,rax
+  63:	ba 01 00 00 00       	mov    edx,0x1
+  68:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 6f <Adder(char, char, char)+0x6f>
+			6b: R_X86_64_PC32	.LC0-0x4
+  6f:	e8 00 00 00 00       	call   74 <Adder(char, char, char)+0x74>
+			70: R_X86_64_PLT32	std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)-0x4
+  74:	48 8b 44 24 08       	mov    rax,QWORD PTR [rsp+0x8]
+  79:	64 48 33 45 00       	xor    rax,QWORD PTR fs:[rbp+0x0]
+  7e:	75 09                	jne    89 <Adder(char, char, char)+0x89>
+  80:	48 83 c4 10          	add    rsp,0x10
+  84:	5b                   	pop    rbx
+  85:	5d                   	pop    rbp
+  86:	41 5c                	pop    r12
+  88:	c3                   	ret    
+  89:	e8 00 00 00 00       	call   8e <Fig1B(char, char, char, char, char)>
+			8a: R_X86_64_PLT32	__stack_chk_fail-0x4
+
+000000000000008e <Fig1B(char, char, char, char, char)>:
+  8e:	f3 0f 1e fa          	endbr64 
+  92:	48 83 ec 08          	sub    rsp,0x8
+  96:	0f be d2             	movsx  edx,dl
+  99:	41 21 f0             	and    r8d,esi
+  9c:	41 0f be f0          	movsx  esi,r8b
+  a0:	21 f9                	and    ecx,edi
+  a2:	0f be f9             	movsx  edi,cl
+  a5:	e8 00 00 00 00       	call   aa <Fig1B(char, char, char, char, char)+0x1c>
+			a6: R_X86_64_PLT32	Adder(char, char, char)-0x4
+  aa:	48 83 c4 08          	add    rsp,0x8
+  ae:	c3                   	ret    
+
+00000000000000af <Fig1C(char, char, char, char)>:
+  af:	f3 0f 1e fa          	endbr64 
+  b3:	48 83 ec 08          	sub    rsp,0x8
+  b7:	0f be c9             	movsx  ecx,cl
+  ba:	40 0f be f6          	movsx  esi,sil
+  be:	21 fa                	and    edx,edi
+  c0:	0f be fa             	movsx  edi,dl
+  c3:	89 ca                	mov    edx,ecx
+  c5:	e8 00 00 00 00       	call   ca <Fig1C(char, char, char, char)+0x1b>
+			c6: R_X86_64_PLT32	Adder(char, char, char)-0x4
+  ca:	48 83 c4 08          	add    rsp,0x8
+  ce:	c3                   	ret    
+
+00000000000000cf <main>:
+  cf:	f3 0f 1e fa          	endbr64 
+  d3:	b8 00 00 00 00       	mov    eax,0x0
+  d8:	c3                   	ret    
+
+00000000000000d9 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)>:
+  d9:	f3 0f 1e fa          	endbr64 
+  dd:	55                   	push   rbp
+  de:	53                   	push   rbx
+  df:	48 83 ec 18          	sub    rsp,0x18
+  e3:	48 89 fb             	mov    rbx,rdi
+  e6:	48 89 f5             	mov    rbp,rsi
+  e9:	64 48 8b 04 25 28 00 	mov    rax,QWORD PTR fs:0x28
+  f0:	00 00 
+  f2:	48 89 44 24 08       	mov    QWORD PTR [rsp+0x8],rax
+  f7:	31 c0                	xor    eax,eax
+  f9:	48 8b 07             	mov    rax,QWORD PTR [rdi]
+  fc:	48 8b 16             	mov    rdx,QWORD PTR [rsi]
+  ff:	0f b6 00             	movzx  eax,BYTE PTR [rax]
+ 102:	22 02                	and    al,BYTE PTR [rdx]
+ 104:	88 44 24 07          	mov    BYTE PTR [rsp+0x7],al
+ 108:	48 8b 35 00 00 00 00 	mov    rsi,QWORD PTR [rip+0x0]        # 10f <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x36>
+			10b: R_X86_64_PC32	Output+0x4
+ 10f:	48 3b 35 00 00 00 00 	cmp    rsi,QWORD PTR [rip+0x0]        # 116 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x3d>
+			112: R_X86_64_PC32	Output+0xc
+ 116:	0f 84 1d 02 00 00    	je     339 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x260>
+ 11c:	88 06                	mov    BYTE PTR [rsi],al
+ 11e:	48 83 05 00 00 00 00 	add    QWORD PTR [rip+0x0],0x1        # 126 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x4d>
+ 125:	01 
+			121: R_X86_64_PC32	Output+0x3
+ 126:	48 8b 45 00          	mov    rax,QWORD PTR [rbp+0x0]
+ 12a:	0f b6 38             	movzx  edi,BYTE PTR [rax]
+ 12d:	40 0f be d7          	movsx  edx,dil
+ 131:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 134:	40 22 38             	and    dil,BYTE PTR [rax]
+ 137:	40 0f be ff          	movsx  edi,dil
+ 13b:	be 00 00 00 00       	mov    esi,0x0
+ 140:	e8 00 00 00 00       	call   145 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x6c>
+			141: R_X86_64_PLT32	Adder(char, char, char)-0x4
+ 145:	48 8b 55 00          	mov    rdx,QWORD PTR [rbp+0x0]
+ 149:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 14c:	0f be 0a             	movsx  ecx,BYTE PTR [rdx]
+ 14f:	48 8b 35 00 00 00 00 	mov    rsi,QWORD PTR [rip+0x0]        # 156 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x7d>
+			152: R_X86_64_PC32	Cout-0x4
+ 156:	0f b6 36             	movzx  esi,BYTE PTR [rsi]
+ 159:	40 22 70 02          	and    sil,BYTE PTR [rax+0x2]
+ 15d:	40 0f be f6          	movsx  esi,sil
+ 161:	0f b6 7a 01          	movzx  edi,BYTE PTR [rdx+0x1]
+ 165:	40 22 78 01          	and    dil,BYTE PTR [rax+0x1]
+ 169:	40 0f be ff          	movsx  edi,dil
+ 16d:	89 ca                	mov    edx,ecx
+ 16f:	e8 00 00 00 00       	call   174 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x9b>
+			170: R_X86_64_PLT32	Adder(char, char, char)-0x4
+ 174:	48 8b 45 00          	mov    rax,QWORD PTR [rbp+0x0]
+ 178:	0f b6 38             	movzx  edi,BYTE PTR [rax]
+ 17b:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 17e:	40 0f be d7          	movsx  edx,dil
+ 182:	48 8b 0d 00 00 00 00 	mov    rcx,QWORD PTR [rip+0x0]        # 189 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0xb0>
+			185: R_X86_64_PC32	Cout-0x4
+ 189:	0f b6 71 01          	movzx  esi,BYTE PTR [rcx+0x1]
+ 18d:	40 22 70 03          	and    sil,BYTE PTR [rax+0x3]
+ 191:	40 0f be f6          	movsx  esi,sil
+ 195:	40 22 78 02          	and    dil,BYTE PTR [rax+0x2]
+ 199:	40 0f be ff          	movsx  edi,dil
+ 19d:	e8 00 00 00 00       	call   1a2 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0xc9>
+			19e: R_X86_64_PLT32	Adder(char, char, char)-0x4
+ 1a2:	48 8b 45 00          	mov    rax,QWORD PTR [rbp+0x0]
+ 1a6:	0f b6 38             	movzx  edi,BYTE PTR [rax]
+ 1a9:	40 0f be d7          	movsx  edx,dil
+ 1ad:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 1b0:	40 22 78 03          	and    dil,BYTE PTR [rax+0x3]
+ 1b4:	40 0f be ff          	movsx  edi,dil
+ 1b8:	be 00 00 00 00       	mov    esi,0x0
+ 1bd:	e8 00 00 00 00       	call   1c2 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0xe9>
+			1be: R_X86_64_PLT32	Adder(char, char, char)-0x4
+ 1c2:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 1c9 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0xf0>
+			1c5: R_X86_64_PC32	PP1-0x4
+ 1c9:	0f be 70 03          	movsx  esi,BYTE PTR [rax+0x3]
+ 1cd:	48 8b 55 00          	mov    rdx,QWORD PTR [rbp+0x0]
+ 1d1:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 1d4:	0f b6 7a 02          	movzx  edi,BYTE PTR [rdx+0x2]
+ 1d8:	40 22 38             	and    dil,BYTE PTR [rax]
+ 1db:	40 0f be ff          	movsx  edi,dil
+ 1df:	ba 00 00 00 00       	mov    edx,0x0
+ 1e4:	e8 00 00 00 00       	call   1e9 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x110>
+			1e5: R_X86_64_PLT32	Adder(char, char, char)-0x4
+ 1e9:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 1f0 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x117>
+			1ec: R_X86_64_PC32	Cout-0x4
+ 1f0:	0f be 50 03          	movsx  edx,BYTE PTR [rax+0x3]
+ 1f4:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 1fb <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x122>
+			1f7: R_X86_64_PC32	PP1-0x4
+ 1fb:	0f be 70 02          	movsx  esi,BYTE PTR [rax+0x2]
+ 1ff:	48 8b 4d 00          	mov    rcx,QWORD PTR [rbp+0x0]
+ 203:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 206:	0f b6 79 02          	movzx  edi,BYTE PTR [rcx+0x2]
+ 20a:	40 22 78 01          	and    dil,BYTE PTR [rax+0x1]
+ 20e:	40 0f be ff          	movsx  edi,dil
+ 212:	e8 00 00 00 00       	call   217 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x13e>
+			213: R_X86_64_PLT32	Adder(char, char, char)-0x4
+ 217:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 21e <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x145>
+			21a: R_X86_64_PC32	Cout-0x4
+ 21e:	0f be 50 04          	movsx  edx,BYTE PTR [rax+0x4]
+ 222:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 229 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x150>
+			225: R_X86_64_PC32	PP1-0x4
+ 229:	0f be 70 01          	movsx  esi,BYTE PTR [rax+0x1]
+ 22d:	48 8b 4d 00          	mov    rcx,QWORD PTR [rbp+0x0]
+ 231:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 234:	0f b6 79 02          	movzx  edi,BYTE PTR [rcx+0x2]
+ 238:	40 22 78 02          	and    dil,BYTE PTR [rax+0x2]
+ 23c:	40 0f be ff          	movsx  edi,dil
+ 240:	e8 00 00 00 00       	call   245 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x16c>
+			241: R_X86_64_PLT32	Adder(char, char, char)-0x4
+ 245:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 24c <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x173>
+			248: R_X86_64_PC32	Cout-0x4
+ 24c:	0f be 50 05          	movsx  edx,BYTE PTR [rax+0x5]
+ 250:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 257 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x17e>
+			253: R_X86_64_PC32	PP1-0x4
+ 257:	0f be 30             	movsx  esi,BYTE PTR [rax]
+ 25a:	48 8b 4d 00          	mov    rcx,QWORD PTR [rbp+0x0]
+ 25e:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 261:	0f b6 79 02          	movzx  edi,BYTE PTR [rcx+0x2]
+ 265:	40 22 78 03          	and    dil,BYTE PTR [rax+0x3]
+ 269:	40 0f be ff          	movsx  edi,dil
+ 26d:	e8 00 00 00 00       	call   272 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x199>
+			26e: R_X86_64_PLT32	Adder(char, char, char)-0x4
+ 272:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 279 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x1a0>
+			275: R_X86_64_PC32	PP2-0x4
+ 279:	0f be 70 03          	movsx  esi,BYTE PTR [rax+0x3]
+ 27d:	48 8b 55 00          	mov    rdx,QWORD PTR [rbp+0x0]
+ 281:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 284:	0f b6 7a 03          	movzx  edi,BYTE PTR [rdx+0x3]
+ 288:	40 22 38             	and    dil,BYTE PTR [rax]
+ 28b:	40 0f be ff          	movsx  edi,dil
+ 28f:	ba 00 00 00 00       	mov    edx,0x0
+ 294:	e8 00 00 00 00       	call   299 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x1c0>
+			295: R_X86_64_PLT32	Adder(char, char, char)-0x4
+ 299:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 2a0 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x1c7>
+			29c: R_X86_64_PC32	Cout-0x4
+ 2a0:	0f be 50 06          	movsx  edx,BYTE PTR [rax+0x6]
+ 2a4:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 2ab <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x1d2>
+			2a7: R_X86_64_PC32	PP2-0x4
+ 2ab:	0f be 70 02          	movsx  esi,BYTE PTR [rax+0x2]
+ 2af:	48 8b 4d 00          	mov    rcx,QWORD PTR [rbp+0x0]
+ 2b3:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 2b6:	0f b6 79 03          	movzx  edi,BYTE PTR [rcx+0x3]
+ 2ba:	40 22 78 01          	and    dil,BYTE PTR [rax+0x1]
+ 2be:	40 0f be ff          	movsx  edi,dil
+ 2c2:	e8 00 00 00 00       	call   2c7 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x1ee>
+			2c3: R_X86_64_PLT32	Adder(char, char, char)-0x4
+ 2c7:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 2ce <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x1f5>
+			2ca: R_X86_64_PC32	Cout-0x4
+ 2ce:	0f be 50 07          	movsx  edx,BYTE PTR [rax+0x7]
+ 2d2:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 2d9 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x200>
+			2d5: R_X86_64_PC32	PP2-0x4
+ 2d9:	0f be 70 01          	movsx  esi,BYTE PTR [rax+0x1]
+ 2dd:	48 8b 4d 00          	mov    rcx,QWORD PTR [rbp+0x0]
+ 2e1:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 2e4:	0f b6 79 03          	movzx  edi,BYTE PTR [rcx+0x3]
+ 2e8:	40 22 78 02          	and    dil,BYTE PTR [rax+0x2]
+ 2ec:	40 0f be ff          	movsx  edi,dil
+ 2f0:	e8 00 00 00 00       	call   2f5 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x21c>
+			2f1: R_X86_64_PLT32	Adder(char, char, char)-0x4
+ 2f5:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 2fc <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x223>
+			2f8: R_X86_64_PC32	Cout-0x4
+ 2fc:	0f be 50 08          	movsx  edx,BYTE PTR [rax+0x8]
+ 300:	48 8b 05 00 00 00 00 	mov    rax,QWORD PTR [rip+0x0]        # 307 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x22e>
+			303: R_X86_64_PC32	PP2-0x4
+ 307:	0f be 30             	movsx  esi,BYTE PTR [rax]
+ 30a:	48 8b 4d 00          	mov    rcx,QWORD PTR [rbp+0x0]
+ 30e:	48 8b 03             	mov    rax,QWORD PTR [rbx]
+ 311:	0f b6 79 03          	movzx  edi,BYTE PTR [rcx+0x3]
+ 315:	40 22 78 03          	and    dil,BYTE PTR [rax+0x3]
+ 319:	40 0f be ff          	movsx  edi,dil
+ 31d:	e8 00 00 00 00       	call   322 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x249>
+			31e: R_X86_64_PLT32	Adder(char, char, char)-0x4
+ 322:	48 8b 44 24 08       	mov    rax,QWORD PTR [rsp+0x8]
+ 327:	64 48 33 04 25 28 00 	xor    rax,QWORD PTR fs:0x28
+ 32e:	00 00 
+ 330:	75 1d                	jne    34f <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x276>
+ 332:	48 83 c4 18          	add    rsp,0x18
+ 336:	5b                   	pop    rbx
+ 337:	5d                   	pop    rbp
+ 338:	c3                   	ret    
+ 339:	48 8d 54 24 07       	lea    rdx,[rsp+0x7]
+ 33e:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 345 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x26c>
+			341: R_X86_64_PC32	Output-0x4
+ 345:	e8 00 00 00 00       	call   34a <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x271>
+			346: R_X86_64_PLT32	void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)-0x4
+ 34a:	e9 d7 fd ff ff       	jmp    126 <Multiplier(std::vector<char, std::allocator<char> >, std::vector<char, std::allocator<char> >)+0x4d>
+ 34f:	e8 00 00 00 00       	call   354 <_GLOBAL__sub_I_Output>
+			350: R_X86_64_PLT32	__stack_chk_fail-0x4
+
+0000000000000354 <_GLOBAL__sub_I_Output>:
+ 354:	f3 0f 1e fa          	endbr64 
+ 358:	55                   	push   rbp
+ 359:	53                   	push   rbx
+ 35a:	48 83 ec 18          	sub    rsp,0x18
+ 35e:	bd 28 00 00 00       	mov    ebp,0x28
+ 363:	64 48 8b 45 00       	mov    rax,QWORD PTR fs:[rbp+0x0]
+ 368:	48 89 44 24 08       	mov    QWORD PTR [rsp+0x8],rax
+ 36d:	31 c0                	xor    eax,eax
+ 36f:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 376 <_GLOBAL__sub_I_Output+0x22>
+			372: R_X86_64_PC32	.bss+0x74
+ 376:	e8 00 00 00 00       	call   37b <_GLOBAL__sub_I_Output+0x27>
+			377: R_X86_64_PLT32	std::ios_base::Init::Init()-0x4
+ 37b:	48 8d 15 00 00 00 00 	lea    rdx,[rip+0x0]        # 382 <_GLOBAL__sub_I_Output+0x2e>
+			37e: R_X86_64_PC32	__dso_handle-0x4
+ 382:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 389 <_GLOBAL__sub_I_Output+0x35>
+			385: R_X86_64_PC32	.bss+0x74
+ 389:	48 8b 3d 00 00 00 00 	mov    rdi,QWORD PTR [rip+0x0]        # 390 <_GLOBAL__sub_I_Output+0x3c>
+			38c: R_X86_64_REX_GOTPCRELX	std::ios_base::Init::~Init()-0x4
+ 390:	e8 00 00 00 00       	call   395 <_GLOBAL__sub_I_Output+0x41>
+			391: R_X86_64_PLT32	__cxa_atexit-0x4
+ 395:	48 8d 5c 24 07       	lea    rbx,[rsp+0x7]
+ 39a:	48 89 da             	mov    rdx,rbx
+ 39d:	be 07 00 00 00       	mov    esi,0x7
+ 3a2:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 3a9 <_GLOBAL__sub_I_Output+0x55>
+			3a5: R_X86_64_PC32	Output-0x4
+ 3a9:	e8 00 00 00 00       	call   3ae <_GLOBAL__sub_I_Output+0x5a>
+			3aa: R_X86_64_PLT32	std::vector<char, std::allocator<char> >::vector(unsigned long, std::allocator<char> const&)-0x4
+ 3ae:	48 8d 15 00 00 00 00 	lea    rdx,[rip+0x0]        # 3b5 <_GLOBAL__sub_I_Output+0x61>
+			3b1: R_X86_64_PC32	__dso_handle-0x4
+ 3b5:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 3bc <_GLOBAL__sub_I_Output+0x68>
+			3b8: R_X86_64_PC32	Output-0x4
+ 3bc:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 3c3 <_GLOBAL__sub_I_Output+0x6f>
+			3bf: R_X86_64_PC32	std::vector<char, std::allocator<char> >::~vector()-0x4
+ 3c3:	e8 00 00 00 00       	call   3c8 <_GLOBAL__sub_I_Output+0x74>
+			3c4: R_X86_64_PLT32	__cxa_atexit-0x4
+ 3c8:	48 89 da             	mov    rdx,rbx
+ 3cb:	be 08 00 00 00       	mov    esi,0x8
+ 3d0:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 3d7 <_GLOBAL__sub_I_Output+0x83>
+			3d3: R_X86_64_PC32	Cout-0x4
+ 3d7:	e8 00 00 00 00       	call   3dc <_GLOBAL__sub_I_Output+0x88>
+			3d8: R_X86_64_PLT32	std::vector<char, std::allocator<char> >::vector(unsigned long, std::allocator<char> const&)-0x4
+ 3dc:	48 8d 15 00 00 00 00 	lea    rdx,[rip+0x0]        # 3e3 <_GLOBAL__sub_I_Output+0x8f>
+			3df: R_X86_64_PC32	__dso_handle-0x4
+ 3e3:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 3ea <_GLOBAL__sub_I_Output+0x96>
+			3e6: R_X86_64_PC32	Cout-0x4
+ 3ea:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 3f1 <_GLOBAL__sub_I_Output+0x9d>
+			3ed: R_X86_64_PC32	std::vector<char, std::allocator<char> >::~vector()-0x4
+ 3f1:	e8 00 00 00 00       	call   3f6 <_GLOBAL__sub_I_Output+0xa2>
+			3f2: R_X86_64_PLT32	__cxa_atexit-0x4
+ 3f6:	48 89 da             	mov    rdx,rbx
+ 3f9:	be 03 00 00 00       	mov    esi,0x3
+ 3fe:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 405 <_GLOBAL__sub_I_Output+0xb1>
+			401: R_X86_64_PC32	PP1-0x4
+ 405:	e8 00 00 00 00       	call   40a <_GLOBAL__sub_I_Output+0xb6>
+			406: R_X86_64_PLT32	std::vector<char, std::allocator<char> >::vector(unsigned long, std::allocator<char> const&)-0x4
+ 40a:	48 8d 15 00 00 00 00 	lea    rdx,[rip+0x0]        # 411 <_GLOBAL__sub_I_Output+0xbd>
+			40d: R_X86_64_PC32	__dso_handle-0x4
+ 411:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 418 <_GLOBAL__sub_I_Output+0xc4>
+			414: R_X86_64_PC32	PP1-0x4
+ 418:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 41f <_GLOBAL__sub_I_Output+0xcb>
+			41b: R_X86_64_PC32	std::vector<char, std::allocator<char> >::~vector()-0x4
+ 41f:	e8 00 00 00 00       	call   424 <_GLOBAL__sub_I_Output+0xd0>
+			420: R_X86_64_PLT32	__cxa_atexit-0x4
+ 424:	48 89 da             	mov    rdx,rbx
+ 427:	be 03 00 00 00       	mov    esi,0x3
+ 42c:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 433 <_GLOBAL__sub_I_Output+0xdf>
+			42f: R_X86_64_PC32	PP2-0x4
+ 433:	e8 00 00 00 00       	call   438 <_GLOBAL__sub_I_Output+0xe4>
+			434: R_X86_64_PLT32	std::vector<char, std::allocator<char> >::vector(unsigned long, std::allocator<char> const&)-0x4
+ 438:	48 8d 15 00 00 00 00 	lea    rdx,[rip+0x0]        # 43f <_GLOBAL__sub_I_Output+0xeb>
+			43b: R_X86_64_PC32	__dso_handle-0x4
+ 43f:	48 8d 35 00 00 00 00 	lea    rsi,[rip+0x0]        # 446 <_GLOBAL__sub_I_Output+0xf2>
+			442: R_X86_64_PC32	PP2-0x4
+ 446:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 44d <_GLOBAL__sub_I_Output+0xf9>
+			449: R_X86_64_PC32	std::vector<char, std::allocator<char> >::~vector()-0x4
+ 44d:	e8 00 00 00 00       	call   452 <_GLOBAL__sub_I_Output+0xfe>
+			44e: R_X86_64_PLT32	__cxa_atexit-0x4
+ 452:	48 8b 44 24 08       	mov    rax,QWORD PTR [rsp+0x8]
+ 457:	64 48 33 45 00       	xor    rax,QWORD PTR fs:[rbp+0x0]
+ 45c:	75 07                	jne    465 <_GLOBAL__sub_I_Output+0x111>
+ 45e:	48 83 c4 18          	add    rsp,0x18
+ 462:	5b                   	pop    rbx
+ 463:	5d                   	pop    rbp
+ 464:	c3                   	ret    
+ 465:	e8 00 00 00 00       	call   46a <_GLOBAL__sub_I_Output+0x116>
+			466: R_X86_64_PLT32	__stack_chk_fail-0x4
+
+Disassembly of section .text._ZNSt6vectorIcSaIcEED2Ev:
+
+0000000000000000 <std::vector<char, std::allocator<char> >::~vector()>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	48 8b 3f             	mov    rdi,QWORD PTR [rdi]
+   7:	48 85 ff             	test   rdi,rdi
+   a:	74 0e                	je     1a <std::vector<char, std::allocator<char> >::~vector()+0x1a>
+   c:	48 83 ec 08          	sub    rsp,0x8
+  10:	e8 00 00 00 00       	call   15 <std::vector<char, std::allocator<char> >::~vector()+0x15>
+			11: R_X86_64_PLT32	operator delete(void*)-0x4
+  15:	48 83 c4 08          	add    rsp,0x8
+  19:	c3                   	ret    
+  1a:	c3                   	ret    
+
+Disassembly of section .text._ZNSt6vectorIcSaIcEEC2EmRKS0_:
+
+0000000000000000 <std::vector<char, std::allocator<char> >::vector(unsigned long, std::allocator<char> const&)>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 54                	push   r12
+   6:	55                   	push   rbp
+   7:	53                   	push   rbx
+   8:	48 85 f6             	test   rsi,rsi
+   b:	78 4b                	js     58 <std::vector<char, std::allocator<char> >::vector(unsigned long, std::allocator<char> const&)+0x58>
+   d:	48 89 fb             	mov    rbx,rdi
+  10:	48 89 f5             	mov    rbp,rsi
+  13:	48 c7 07 00 00 00 00 	mov    QWORD PTR [rdi],0x0
+  1a:	48 c7 47 08 00 00 00 	mov    QWORD PTR [rdi+0x8],0x0
+  21:	00 
+  22:	48 c7 47 10 00 00 00 	mov    QWORD PTR [rdi+0x10],0x0
+  29:	00 
+  2a:	74 38                	je     64 <std::vector<char, std::allocator<char> >::vector(unsigned long, std::allocator<char> const&)+0x64>
+  2c:	48 89 f7             	mov    rdi,rsi
+  2f:	e8 00 00 00 00       	call   34 <std::vector<char, std::allocator<char> >::vector(unsigned long, std::allocator<char> const&)+0x34>
+			30: R_X86_64_PLT32	operator new(unsigned long)-0x4
+  34:	48 89 c7             	mov    rdi,rax
+  37:	48 89 03             	mov    QWORD PTR [rbx],rax
+  3a:	4c 8d 24 28          	lea    r12,[rax+rbp*1]
+  3e:	4c 89 63 10          	mov    QWORD PTR [rbx+0x10],r12
+  42:	48 89 ea             	mov    rdx,rbp
+  45:	be 00 00 00 00       	mov    esi,0x0
+  4a:	e8 00 00 00 00       	call   4f <std::vector<char, std::allocator<char> >::vector(unsigned long, std::allocator<char> const&)+0x4f>
+			4b: R_X86_64_PLT32	memset-0x4
+  4f:	4c 89 63 08          	mov    QWORD PTR [rbx+0x8],r12
+  53:	5b                   	pop    rbx
+  54:	5d                   	pop    rbp
+  55:	41 5c                	pop    r12
+  57:	c3                   	ret    
+  58:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 5f <std::vector<char, std::allocator<char> >::vector(unsigned long, std::allocator<char> const&)+0x5f>
+			5b: R_X86_64_PC32	.LC1-0x4
+  5f:	e8 00 00 00 00       	call   64 <std::vector<char, std::allocator<char> >::vector(unsigned long, std::allocator<char> const&)+0x64>
+			60: R_X86_64_PLT32	std::__throw_length_error(char const*)-0x4
+  64:	48 c7 07 00 00 00 00 	mov    QWORD PTR [rdi],0x0
+  6b:	48 c7 47 10 00 00 00 	mov    QWORD PTR [rdi+0x10],0x0
+  72:	00 
+  73:	41 bc 00 00 00 00    	mov    r12d,0x0
+  79:	eb d4                	jmp    4f <std::vector<char, std::allocator<char> >::vector(unsigned long, std::allocator<char> const&)+0x4f>
+
+Disassembly of section .text._ZNSt6vectorIcSaIcEE17_M_realloc_insertIJcEEEvN9__gnu_cxx17__normal_iteratorIPcS1_EEDpOT_:
+
+0000000000000000 <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)>:
+   0:	f3 0f 1e fa          	endbr64 
+   4:	41 57                	push   r15
+   6:	41 56                	push   r14
+   8:	41 55                	push   r13
+   a:	41 54                	push   r12
+   c:	55                   	push   rbp
+   d:	53                   	push   rbx
+   e:	48 83 ec 28          	sub    rsp,0x28
+  12:	48 89 74 24 08       	mov    QWORD PTR [rsp+0x8],rsi
+  17:	48 89 54 24 18       	mov    QWORD PTR [rsp+0x18],rdx
+  1c:	4c 8b 6f 08          	mov    r13,QWORD PTR [rdi+0x8]
+  20:	4c 8b 37             	mov    r14,QWORD PTR [rdi]
+  23:	4c 89 e8             	mov    rax,r13
+  26:	4c 29 f0             	sub    rax,r14
+  29:	48 ba ff ff ff ff ff 	movabs rdx,0x7fffffffffffffff
+  30:	ff ff 7f 
+  33:	48 39 d0             	cmp    rax,rdx
+  36:	74 32                	je     6a <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0x6a>
+  38:	49 89 fc             	mov    r12,rdi
+  3b:	48 85 c0             	test   rax,rax
+  3e:	bb 01 00 00 00       	mov    ebx,0x1
+  43:	48 0f 45 d8          	cmovne rbx,rax
+  47:	48 01 c3             	add    rbx,rax
+  4a:	72 4f                	jb     9b <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0x9b>
+  4c:	48 85 db             	test   rbx,rbx
+  4f:	78 4a                	js     9b <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0x9b>
+  51:	4c 8b 7c 24 08       	mov    r15,QWORD PTR [rsp+0x8]
+  56:	4d 29 f7             	sub    r15,r14
+  59:	4c 89 7c 24 10       	mov    QWORD PTR [rsp+0x10],r15
+  5e:	bd 00 00 00 00       	mov    ebp,0x0
+  63:	48 85 db             	test   rbx,rbx
+  66:	74 55                	je     bd <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0xbd>
+  68:	eb 48                	jmp    b2 <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0xb2>
+  6a:	48 8d 3d 00 00 00 00 	lea    rdi,[rip+0x0]        # 71 <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0x71>
+			6d: R_X86_64_PC32	.LC2-0x4
+  71:	e8 00 00 00 00       	call   76 <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0x76>
+			72: R_X86_64_PLT32	std::__throw_length_error(char const*)-0x4
+  76:	49 89 cf             	mov    r15,rcx
+  79:	48 89 ca             	mov    rdx,rcx
+  7c:	4c 89 f6             	mov    rsi,r14
+  7f:	48 89 ef             	mov    rdi,rbp
+  82:	e8 00 00 00 00       	call   87 <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0x87>
+			83: R_X86_64_PLT32	memmove-0x4
+  87:	4e 8d 7c 3d 01       	lea    r15,[rbp+r15*1+0x1]
+  8c:	4c 2b 6c 24 08       	sub    r13,QWORD PTR [rsp+0x8]
+  91:	4d 85 ed             	test   r13,r13
+  94:	7f 51                	jg     e7 <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0xe7>
+  96:	4d 01 fd             	add    r13,r15
+  99:	eb 64                	jmp    ff <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0xff>
+  9b:	4c 8b 7c 24 08       	mov    r15,QWORD PTR [rsp+0x8]
+  a0:	4d 29 f7             	sub    r15,r14
+  a3:	4c 89 7c 24 10       	mov    QWORD PTR [rsp+0x10],r15
+  a8:	48 bb ff ff ff ff ff 	movabs rbx,0x7fffffffffffffff
+  af:	ff ff 7f 
+  b2:	48 89 df             	mov    rdi,rbx
+  b5:	e8 00 00 00 00       	call   ba <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0xba>
+			b6: R_X86_64_PLT32	operator new(unsigned long)-0x4
+  ba:	48 89 c5             	mov    rbp,rax
+  bd:	48 8b 44 24 18       	mov    rax,QWORD PTR [rsp+0x18]
+  c2:	0f b6 00             	movzx  eax,BYTE PTR [rax]
+  c5:	48 8b 4c 24 10       	mov    rcx,QWORD PTR [rsp+0x10]
+  ca:	88 44 0d 00          	mov    BYTE PTR [rbp+rcx*1+0x0],al
+  ce:	4d 85 ff             	test   r15,r15
+  d1:	7f a3                	jg     76 <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0x76>
+  d3:	48 8b 44 24 10       	mov    rax,QWORD PTR [rsp+0x10]
+  d8:	4c 8d 7c 05 01       	lea    r15,[rbp+rax*1+0x1]
+  dd:	4c 2b 6c 24 08       	sub    r13,QWORD PTR [rsp+0x8]
+  e2:	4d 85 ed             	test   r13,r13
+  e5:	7e 10                	jle    f7 <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0xf7>
+  e7:	4c 89 ea             	mov    rdx,r13
+  ea:	48 8b 74 24 08       	mov    rsi,QWORD PTR [rsp+0x8]
+  ef:	4c 89 ff             	mov    rdi,r15
+  f2:	e8 00 00 00 00       	call   f7 <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0xf7>
+			f3: R_X86_64_PLT32	memcpy-0x4
+  f7:	4d 01 fd             	add    r13,r15
+  fa:	4d 85 f6             	test   r14,r14
+  fd:	74 08                	je     107 <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0x107>
+  ff:	4c 89 f7             	mov    rdi,r14
+ 102:	e8 00 00 00 00       	call   107 <void std::vector<char, std::allocator<char> >::_M_realloc_insert<char>(__gnu_cxx::__normal_iterator<char*, std::vector<char, std::allocator<char> > >, char&&)+0x107>
+			103: R_X86_64_PLT32	operator delete(void*)-0x4
+ 107:	49 89 2c 24          	mov    QWORD PTR [r12],rbp
+ 10b:	4d 89 6c 24 08       	mov    QWORD PTR [r12+0x8],r13
+ 110:	48 01 eb             	add    rbx,rbp
+ 113:	49 89 5c 24 10       	mov    QWORD PTR [r12+0x10],rbx
+ 118:	48 83 c4 28          	add    rsp,0x28
+ 11c:	5b                   	pop    rbx
+ 11d:	5d                   	pop    rbp
+ 11e:	41 5c                	pop    r12
+ 120:	41 5d                	pop    r13
+ 122:	41 5e                	pop    r14
+ 124:	41 5f                	pop    r15
+ 126:	c3                   	ret    
