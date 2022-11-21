@@ -1,0 +1,13 @@
+;11/21/2022
+;assembly bit multiplier
+
+
+;so below I have a selection of different jumps/pointer sections for different pieces needed
+;WHAT TO CHECK! if I do it this way, will it run back to the code placement? (blieve this is a no...)
+
+
+section .data ; check if it should be .data.....
+adder:
+TopRow:
+SecondRow:
+ResultRow:
