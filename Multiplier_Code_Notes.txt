@@ -22,4 +22,3 @@ Multiplier VHDL to assemmbly code notes!
 	-same issue with the carry values...or the answers to the rows of pieces....maybe I should go down rather than 
 		across...(view multiplier circuit again) not sure if this will help but might try...
 
---USING CHAR SINCE IT TAKES A SINGLE BYTE! THIS IS IMPORTANTTTTT
