@@ -1,9 +1,10 @@
  ;11/21/2022
  ;asm bit multiplier
  
-;ret
+ret
 
-section .text ;note the last value is the least significant!
+;THIS HAS TO BE .DATA! 
+section .data ;note the last value is the least significant!
  M: 
  	dq 0,0,0,0
  Q: 
@@ -48,20 +49,25 @@ Adder:
 	ret
 		
 TopRow:;fig1b top row values
-
-	;REVIEW ACCESSING AN ARRAY
  	;first two values
-	mov r8, M[3]
-	mov r9, M[2]
+ 	mov rax, M ;set to M array adress
+ 	mov rdi, Q ; set to Q array
+ 	
+	mov r8, QWORD[rcx]
+	mov r9, QWORD[rcx+16]
 	;second two values
-	mov r10, Q[3]
-	mov r11, Q[2]
+	mov r10, QWORD[rdi+24]
+	mov r11, QWORD[rdi+16]
  
-	
 	 cmp r8, r11
 	 ;	je Adder
 	 cmp r9, r10
 	 ;	je Adder
-	 ret
-	 
+	;the values for r8 and r9 are given by the the other subcircuits values
+	;so fig1b or fig1c values...
+
+	ret
+	;Return 4219120 (0x4060F0)
+	;this this could be an overload value...
+
 SecondRow:
