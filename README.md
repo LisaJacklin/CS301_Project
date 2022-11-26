@@ -21,7 +21,7 @@ Although VHDL is extremely simplified version of what I will need to create and 
 - 11/12/2022 : all subcircuits created and compiling correctly. Multiplier with vector input added.
 - 11/13/2022 : multiplier code completed aside from overload errors and testing.
 - 11/16/2022 : basic outline for assembly code for the multiplier circuit created and begun (uploaded 11/21/2022)
--11/26/2022 : uploaded asseembly subcircuits without the carry values implemented. Will be added as the full multiplier is coded.
+- 11/26/2022 : uploaded asseembly subcircuits without the carry values implemented. Will be added as the full multiplier is coded.
 
 ## Final Result
 
