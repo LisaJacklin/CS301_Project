@@ -1,28 +1,44 @@
-;11/21/2022
-;assembly bit multiplier
+ ;11/21/2022
+ ;asm bit multiplier
+ 
 
+ 
+section .text ;note the last value is the least significant!
+ M: 
+ 	dq 0,0,0,0
+ Q: dq 0,0,0,0
+ 
+ 
+Section .data ;this is modifiable values, which should work well for my intermediates!
+PP1:
+PP2:
+Cout:
 
-;so below I have a selection of different jumps/pointer sections for different pieces needed
-;WHAT TO CHECK! if I do it this way, will it run back to the code placement? (blieve this is a no...)
-
-;first thing I know I can do is setting register(s) for input values.
-;review and see if I should input all 4 bits into a single register or not.... can I parce a register?
-mov rdx, 0000 ;for the moment, lets say this is M(4-0) 
-mov rcx, 0000 ;and this is Q(4-0)
-
-mov rax, 0 ;this is the grounding piece within the circuit...(so rax is what will be push/popped)
-;through all of these functions is my initial thought...)
-
-
-
-section .data ; check if it should be .data.....
-adder:
+section .text ; this should be executable machine code.
+Adder:
+	mov r8, 1 ;these values must be something that change...
+	mov r9, 1 ;this one too! based entirely on what is being added...
 	
-
+	cmp r8, 0
+		jg Sum
+	cmp r9, 0
+		jg Sum
+	
+	Sum:
+		cmp r8, r9
+			je Equal
+			jg SumNoCout
+			jl SumNoCout
+			
+	SumNoCout:
+		mov r10, 1 ; sum value is one
+		mov r11, 0
+		ret
+	
+	Equal:
+		mov r11, 1 ; this is the carry value, 
+		mov r10, 0 ; and this is the corresponding sum value
+		ret
 TopRow:
 SecondRow:
 ResultRow:
-
-
-;note that the disassembly code is being used as inspiration/reference
-;with the hope that it will point me in the correct direction.....
