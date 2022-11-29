@@ -1,10 +1,19 @@
- ;11/21/2022
- ;asm bit multiplier
+;CS 301
+;Lisa Jacklin 
+;11/21/2022
+;Project: assembly 4by4 bit multiplier!
+
+;Goal: create a chunk of assembly code that will take two four bit values, and multiply them together giving a binary output!
+;this is achieved through the use and reference of VHDL code that can be seen in my CS301_project github repository.
+
+;Note that having the subcircuit and multiplier circuit pictures present in my github repository will be helpful in understanding the code 
+;and comments below.
  
+
 ;Now, to begin the full multiplier circuit....using the subcircuits... 
 ret
 
-;THIS HAS TO BE .DATA! 
+
 section .data ;note the last value is the least significant!
  M: 
  	dq 0,0,0,0
