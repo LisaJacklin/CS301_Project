@@ -11,7 +11,17 @@
  
 
 ;Now, to begin the full multiplier circuit....using the subcircuits... 
-ret
+
+;starting and gate, and result P(0)
+	mov rax, M 
+	mov rcx, Q
+	
+	mov rdi, QWORD[rax+32] ; least significant value M
+	mov rdx, QWORD[rcx+32] ; least significant value Q
+
+	and rdi, rdx
+	 ;move this value to P(0) or the least significant value.
+	ret
 
 
 section .data ;note the last value is the least significant!
